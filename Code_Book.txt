@@ -1,0 +1,196 @@
+The data was extracted from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones and comprises data collected from the accelerometers from the Samsung Galaxy S smartphone.
+
+
+Note:  Made the assumption that the current column names are descriptive if the enduser works in this particular field.  Since I do not, I was not sure what the names ment and thus could not make them fit terminology non-industry individuals would understand.
+
+Usage
+HAR.script
+
+Format
+
+Data loaded: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+Data description for the raw data is located in the features.info table at this site:http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Source: Activity Recognition Using Smartphones Data Set  - http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
+
+
+First creates a data frame of just the mean and average fields from the raw data set.  This data is used to create a second, independent tidy data set with the average of each variable for each activity and each subject as describe below. All information on the totalDataset fields are at the end of this file.
+
+Tidy Dataset 
+Output is average of each 
+
+
+
+Name: totalDataset
+'data.frame': 81 variables:
+ $ tBodyAcc-mean()-X              : num  
+ $ tBodyAcc-mean()-Y              : num  
+ $ tBodyAcc-mean()-Z              : num  
+ $ tBodyAcc-std()-X               : num  
+ $ tBodyAcc-std()-Y               : num  
+ $ tBodyAcc-std()-Z               : num  
+ $ tGravityAcc-mean()-X           : num 
+ $ tGravityAcc-mean()-Y           : num 
+ $ tGravityAcc-mean()-Z           : num 
+ $ tGravityAcc-std()-X            : num 
+ $ tGravityAcc-std()-Y            : num 
+ $ tGravityAcc-std()-Z            : num 
+ $ tBodyAccJerk-mean()-X          : num 
+ $ tBodyAccJerk-mean()-Y          : num 
+ $ tBodyAccJerk-mean()-Z          : num 
+ $ tBodyAccJerk-std()-X           : num  
+ $ tBodyAccJerk-std()-Y           : num  
+ $ tBodyAccJerk-std()-Z           : num  
+ $ tBodyGyro-mean()-X             : num  
+ $ tBodyGyro-mean()-Y             : num  
+ $ tBodyGyro-mean()-Z             : num  
+ $ tBodyGyro-std()-X              : num  
+ $ tBodyGyro-std()-Y              : num  
+ $ tBodyGyro-std()-Z              : num  
+ $ tBodyGyroJerk-mean()-X         : num  
+ $ tBodyGyroJerk-mean()-Y         : num  
+ $ tBodyGyroJerk-mean()-Z         : num  
+ $ tBodyGyroJerk-std()-X          : num  
+ $ tBodyGyroJerk-std()-Y          : num  
+ $ tBodyGyroJerk-std()-Z          : num  
+ $ tBodyAccMag-mean()             : num  
+ $ tBodyAccMag-std()              : num  
+ $ tGravityAccMag-mean()          : num  
+ $ tGravityAccMag-std()           : num  
+ $ tBodyAccJerkMag-mean()         : num  
+ $ tBodyAccJerkMag-std()          : num 
+ $ tBodyGyroMag-mean()            : num  
+ $ tBodyGyroMag-std()             : num  
+ $ tBodyGyroJerkMag-mean()        : num  
+ $ tBodyGyroJerkMag-std()         : num  
+ $ fBodyAcc-mean()-X              : num  
+ $ fBodyAcc-mean()-Y              : num  
+ $ fBodyAcc-mean()-Z              : num  
+ $ fBodyAcc-std()-X               : num  
+ $ fBodyAcc-std()-Y               : num  
+ $ fBodyAcc-std()-Z               : num  
+ $ fBodyAcc-meanFreq()-X          : num  
+ $ fBodyAcc-meanFreq()-Y          : num 
+ $ fBodyAcc-meanFreq()-Z          : num  
+ $ fBodyAccJerk-mean()-X          : num  
+ $ fBodyAccJerk-mean()-Y          : num  
+ $ fBodyAccJerk-mean()-Z          : num  
+ $ fBodyAccJerk-std()-X           : num  
+ $ fBodyAccJerk-std()-Y           : num  
+ $ fBodyAccJerk-std()-Z           : num 
+ $ fBodyAccJerk-meanFreq()-X      : num 
+ $ fBodyAccJerk-meanFreq()-Y      : num  
+ $ fBodyAccJerk-meanFreq()-Z      : num  
+ $ fBodyGyro-mean()-X             : num  
+ $ fBodyGyro-mean()-Y             : num  
+ $ fBodyGyro-mean()-Z             : num  
+ $ fBodyGyro-std()-X              : num  
+ $ fBodyGyro-std()-Y              : num  
+ $ fBodyGyro-std()-Z              : num  
+ $ fBodyGyro-meanFreq()-X         : num  
+ $ fBodyGyro-meanFreq()-Y         : num  
+ $ fBodyGyro-meanFreq()-Z         : num  
+ $ fBodyAccMag-mean()             : num  
+ $ fBodyAccMag-std()              : num  
+ $ fBodyAccMag-meanFreq()         : num  
+ $ fBodyBodyAccJerkMag-mean()     : num  
+ $ fBodyBodyAccJerkMag-std()      : num  
+ $ fBodyBodyAccJerkMag-meanFreq() : num  
+ $ fBodyBodyGyroMag-mean()        : num  
+ $ fBodyBodyGyroMag-std()         : num  
+ $ fBodyBodyGyroMag-meanFreq()    : num 
+ $ fBodyBodyGyroJerkMag-mean()    : num  
+ $ fBodyBodyGyroJerkMag-std()     : num  
+ $ fBodyBodyGyroJerkMag-meanFreq(): num  
+ $ ActivityKey                    : This is the key field that is used to link to activity description
+ $ ActivityDescription            : Activity Name
+ $ IDKey                          : ID Key represent each subject in the study.
+
+
+Output is a "|" separated text file named output.
+Used "|" out of habit.  Larger numbers sometimes have a comma, so I use "|" as my default separator
+Columns
+ $ IDKey                          : Character Test Subject
+ $ ActivityDescription            : Factor w/ 6 levels Activity
+ $ tBodyAcc-mean()-X              : num  average reading for subject and activity
+ $ tBodyAcc-mean()-Y              : num  average reading for subject and activity
+ $ tBodyAcc-mean()-Z              : num  average reading for subject and activity
+ $ tBodyAcc-std()-X               : num  average reading for subject and activity
+ $ tBodyAcc-std()-Y               : num  average reading for subject and activity
+ $ tBodyAcc-std()-Z               : num  average reading for subject and activity
+ $ tGravityAcc-mean()-X           : num  average reading for subject and activity
+ $ tGravityAcc-mean()-Y           : num  average reading for subject and activity
+ $ tGravityAcc-mean()-Z           : num  average reading for subject and activity
+ $ tGravityAcc-std()-X            : num  average reading for subject and activity
+ $ tGravityAcc-std()-Y            : num  average reading for subject and activity
+ $ tGravityAcc-std()-Z            : num  average reading for subject and activity
+ $ tBodyAccJerk-mean()-X          : num  average reading for subject and activity
+ $ tBodyAccJerk-mean()-Y          : num  average reading for subject and activity
+ $ tBodyAccJerk-mean()-Z          : num  average reading for subject and activity
+ $ tBodyAccJerk-std()-X           : num  average reading for subject and activity
+ $ tBodyAccJerk-std()-Y           : num  average reading for subject and activity
+ $ tBodyAccJerk-std()-Z           : num  average reading for subject and activity
+ $ tBodyGyro-mean()-X             : num  average reading for subject and activity
+ $ tBodyGyro-mean()-Y             : num  average reading for subject and activity
+ $ tBodyGyro-mean()-Z             : num  average reading for subject and activity
+ $ tBodyGyro-std()-X              : num  average reading for subject and activity
+ $ tBodyGyro-std()-Y              : num  average reading for subject and activity
+ $ tBodyGyro-std()-Z              : num  average reading for subject and activity
+ $ tBodyGyroJerk-mean()-X         : num  average reading for subject and activity
+ $ tBodyGyroJerk-mean()-Y         : num  average reading for subject and activity
+ $ tBodyGyroJerk-mean()-Z         : num  average reading for subject and activity
+ $ tBodyGyroJerk-std()-X          : num  average reading for subject and activity
+ $ tBodyGyroJerk-std()-Y          : num  average reading for subject and activity
+ $ tBodyGyroJerk-std()-Z          : num  average reading for subject and activity
+ $ tBodyAccMag-mean()             : num  average reading for subject and activity
+ $ tBodyAccMag-std()              : num  average reading for subject and activity
+ $ tGravityAccMag-mean()          : num  average reading for subject and activity
+ $ tGravityAccMag-std()           : num  average reading for subject and activity
+ $ tBodyAccJerkMag-mean()         : num  average reading for subject and activity
+ $ tBodyAccJerkMag-std()          : num  average reading for subject and activity
+ $ tBodyGyroMag-mean()            : num  average reading for subject and activity
+ $ tBodyGyroMag-std()             : num  average reading for subject and activity
+ $ tBodyGyroJerkMag-mean()        : num  average reading for subject and activity
+ $ tBodyGyroJerkMag-std()         : num  average reading for subject and activity
+ $ fBodyAcc-mean()-X              : num  average reading for subject and activity
+ $ fBodyAcc-mean()-Y              : num  average reading for subject and activity
+ $ fBodyAcc-mean()-Z              : num  average reading for subject and activity
+ $ fBodyAcc-std()-X               : num  average reading for subject and activity
+ $ fBodyAcc-std()-Y               : num  average reading for subject and activity
+ $ fBodyAcc-std()-Z               : num  average reading for subject and activity
+ $ fBodyAcc-meanFreq()-X          : num  average reading for subject and activity
+ $ fBodyAcc-meanFreq()-Y          : num  average reading for subject and activity
+ $ fBodyAcc-meanFreq()-Z          : num  average reading for subject and activity
+ $ fBodyAccJerk-mean()-X          : num  average reading for subject and activity
+ $ fBodyAccJerk-mean()-Y          : num  average reading for subject and activity
+ $ fBodyAccJerk-mean()-Z          : num  average reading for subject and activity
+ $ fBodyAccJerk-std()-X           : num  average reading for subject and activity
+ $ fBodyAccJerk-std()-Y           : num  average reading for subject and activity
+ $ fBodyAccJerk-std()-Z           : num  average reading for subject and activity
+ $ fBodyAccJerk-meanFreq()-X      : num  average reading for subject and activity
+ $ fBodyAccJerk-meanFreq()-Y      : num  average reading for subject and activity
+ $ fBodyAccJerk-meanFreq()-Z      : num  average reading for subject and activity
+ $ fBodyGyro-mean()-X             : num  average reading for subject and activity
+ $ fBodyGyro-mean()-Y             : num  average reading for subject and activity
+ $ fBodyGyro-mean()-Z             : num  average reading for subject and activity
+ $ fBodyGyro-std()-X              : num  average reading for subject and activity
+ $ fBodyGyro-std()-Y              : num  average reading for subject and activity
+ $ fBodyGyro-std()-Z              : num  average reading for subject and activity
+ $ fBodyGyro-meanFreq()-X         : num  average reading for subject and activity
+ $ fBodyGyro-meanFreq()-Y         : num  average reading for subject and activity
+ $ fBodyGyro-meanFreq()-Z         : num  average reading for subject and activity
+ $ fBodyAccMag-mean()             : num  average reading for subject and activity
+ $ fBodyAccMag-std()              : num  average reading for subject and activity
+ $ fBodyAccMag-meanFreq()         : num  average reading for subject and activity
+ $ fBodyBodyAccJerkMag-mean()     : num  average reading for subject and activity
+ $ fBodyBodyAccJerkMag-std()      : num  average reading for subject and activity
+ $ fBodyBodyAccJerkMag-meanFreq() : num  average reading for subject and activity
+ $ fBodyBodyGyroMag-mean()        : num  average reading for subject and activity
+ $ fBodyBodyGyroMag-std()         : num  average reading for subject and activity
+ $ fBodyBodyGyroMag-meanFreq()    : num  average reading for subject and activity
+ $ fBodyBodyGyroJerkMag-mean()    : num  average reading for subject and activity
+ $ fBodyBodyGyroJerkMag-std()     : num  average reading for subject and activity
+ $ fBodyBodyGyroJerkMag-meanFreq(): num  average reading for subject and activity
+ $ ActivityKey  		  : Char Activity number
+Examples
+
+source('~/R/Class/scripts/HAR_sript.R')
